@@ -1,0 +1,4 @@
+interface:
+  display_name: "Garbell"
+  short_description: "Volta de recerca amb evidències i cites verificables"
+  default_prompt: "Utilitza $garbell per incorporar les fonts noves a la volta del doctorat."

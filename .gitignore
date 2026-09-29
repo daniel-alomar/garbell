@@ -1,0 +1,13 @@
+/memory/*
+!/memory/README.md
+/vault/
+/vaults/
+/local/
+**/.wiki/
+**/.obsidian/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+
+/dist/
