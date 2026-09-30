@@ -23,7 +23,8 @@ mostrar els resultats més recents ni concloure l'estat actual de la recerca.
 Obre **`demo/`** a Obsidian i entra a `wiki/index.md`. Hi trobaràs dues fitxes,
 dues notes de mètode, una de concepte, una d'autoria col·lectiva, una síntesi
 i una pregunta. Segueix síntesi → mètode → fitxa → resum documental → article.
-Consulta `wiki/pendents.md`: llegir el resum no completa la ingestió de l'article.
+[La guia de lectura](demo/wiki/guia.md) explica què representa cada peça i
+com visualitzar-la. Consulta `wiki/pendents.md`: llegir el resum no completa la ingestió de l'article.
 
 ## Provar la skill
 
