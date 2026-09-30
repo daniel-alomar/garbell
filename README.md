@@ -16,6 +16,19 @@ recerca; una síntesi útil ha de permetre revisar com s'ha arribat a ella.
 
 [Repositori Garbell](https://github.com/daniel-alomar/garbell).
 
+## Com està plantejat
+
+Garbell conté una skill que utilitza l'agent d'IA amb què treballes.
+En l'ús habitual, un únic agent llegeix les fonts, crea notes, les connecta
+i revisa el resultat seguint passos. No cal executar dos agents.
+
+- `agents/` conté guies de rols opcionals: coordinador i revisor.
+- `skills/garbell/agents/openai.yaml` conté metadades de presentació per a Codex;
+  no és un altre agent.
+- `AGENTS.md` conté instruccions contextuals per treballar al projecte.
+
+[Funcionament, operacions i procés pas a pas](docs/ca/funcionament.md).
+
 ## Començar
 
 Copia `skills/garbell/` al directori de skills del teu agent, o demana-li que
@@ -95,7 +108,8 @@ com obrir el graf, interpretar la llegenda i canviar-la o retirar-la.
 ## Carpetes
 
 - `skills/garbell/`: instruccions, referències i comprovador opcional.
-- `agents/`: rols opcionals de coordinació i revisió; no s'activen sols.
+- `agents/`: guies de rols opcionals, no agents executables.
+- `docs/ca/`: explicació del funcionament i preparació de la documentació bilingüe.
 - `context/`: objectiu i decisions del producte.
 - `memory/`: resums locals opcionals, exclosos de la distribució.
 - `examples/`: demostració eliminable.
@@ -153,6 +167,14 @@ canvien. El quartil tampoc substitueix l'avaluació de cada estudi.
 
 [Guia i plantilla de registre](skills/garbell/references/journals.md).
 Les dades no consultades queden pendents; no s'assignen quartils per reputació.
+
+## Idiomes de la documentació
+
+La documentació actual és en català. Per a la versió pública, es proposa
+mantenir guies completes en català i anglès amb enllaços entre versions,
+conservant una sola implementació de la skill.
+[Organització i manteniment de les traduccions](docs/ca/idiomes.md).
+La traducció anglesa completa queda pendent de preparar.
 
 ## Projecte relacionat
 
