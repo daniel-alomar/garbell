@@ -1,0 +1,9 @@
+version: 1
+name: "Demostració Garbell"
+profile: "research"
+purpose: "Explorar una volta demostrativa amb fonts i relacions traçables"
+language: "ca"
+tooling: "manual"
+source_policy: "provided-only"
+input_folder: "raw"
+batch_size: 5

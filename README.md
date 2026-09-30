@@ -1,49 +1,109 @@
 # Garbell
 
-Passar pel sedàs: lectura crítica, atribució i comparació d’evidències per a la recerca.
+Garbell ajuda a construir i mantenir una volta d'Obsidian per a una recerca
+o un doctorat. L'agent prepara fitxes bibliogràfiques, relaciona conceptes i
+mètodes, i compara resultats sense perdre autoria, context ni limitacions.
+Les afirmacions remeten a fonts i localitzadors verificables; les síntesis
+distingeixen els resultats dels articles de les interpretacions i hipòtesis
+pròpies. La volta facilita escriure, recuperar evidències i detectar buits o
+desacords que cal revisar.
 
-Projecte independent: [repositori Garbell](https://github.com/daniel-alomar/garbell).
-No necessita instal·lar l’altre projecte. Té les seves pròpies utilitats,
-proves, exemples i historial.
+Un **garbell** és un sedàs: permet destriar el gra de la palla. El nom expressa
+una manera crítica de llegir i ordenar informació, preguntant què sosté cada
+conclusió i fins on arriba l'evidència. Garbell conserva també els resultats
+negatius, les contradiccions i les incerteses quan són rellevants per a la
+recerca; una síntesi útil ha de permetre revisar com s'ha arribat a ella.
+
+[Repositori Garbell](https://github.com/daniel-alomar/garbell).
 
 ## Començar
 
-Copia `skills/garbell/` al directori personal de skills del teu agent, o
-indica-li explícitament que llegeixi `skills/garbell/SKILL.md`.
-La skill s’invoca com a `$garbell`. Indica la carpeta de fonts, la destinació
-per a la volta i l’objectiu. No crea cap tasca periòdica automàticament.
+Copia `skills/garbell/` al directori de skills del teu agent, o demana-li que
+llegeixi `skills/garbell/SKILL.md`. Necessites un agent capaç de llegir les
+fonts i escriure fitxers. La skill s'invoca com a `$garbell`; la lectura i
+síntesi les fa l'agent. Obsidian permet navegar i editar el resultat.
 
-Exemple de petició:
+Exemple de petició (substitueix les rutes per les teves):
 
-> Utilitza $garbell amb les fonts que t’indico. Crea una volta nova en català
-> a la destinació que t’indico, conserva els originals i explica les relacions
-> entre notes amb evidència i localitzadors.
+> Utilitza $garbell. Organitza els articles de `/ruta/articles` en una volta a
+> `/ruta/volta-recerca`, en català. Conserva els originals i crea fitxes
+> bibliogràfiques amb cites verificables. Compara resultats i mètodes,
+> distingeix evidència i interpretació, i assenyala lectures pendents.
+
+Obre la carpeta de la volta a Obsidian: contindrà `raw/` i `wiki/`.
+El punt d'entrada és `wiki/index.md`. Obrir només `wiki/` deixa fora les fonts
+que necessiten els enllaços de la demostració. La skill treballa sota demanda;
+una execució periòdica requereix acordar el calendari i les carpetes.
+
+## Ús amb Python o sense
+
+**Python és opcional.** Pots crear, consultar i mantenir la volta amb l'agent
+i Obsidian, sempre que l'agent disposi de les eines necessàries per llegir
+els formats aportats. Per prescindir de Python, afegeix a la petició:
+
+> Treballa sense Python i desa `tooling: manual` a `knowledge.yaml`.
+
+La configuració la interpreta l'agent. En aquest mode comprova fonts i
+enllaços amb els lectors disponibles i documenta les lectures al registre.
+Es conserven les fitxes, les cites i les connexions. Es perd la detecció
+automàtica per empremtes de duplicats, modificacions de notes i canvis de
+fonts durant el procés; el manteniment pot requerir més relectures. Si no
+pot llegir un format sense Python, el deixa pendent i explica el motiu.
+
+Per defecte `tooling: auto` utilitza el comprovador quan és disponible; si
+no ho és, aplica el procediment manual. `tooling: python` demana explícitament
+les comprovacions automàtiques. [Detall dels modes](skills/garbell/references/tooling.md).
 
 ## Exemples opcionals
 
-[Guia de la demostració](examples/README.md): dues fonts fictícies i una
-volta petita amb el resultat esperat. Pots obrir `examples/demo/` a Obsidian
-per veure’n les connexions. Tot el contingut és sintètic, incloses les dades
-numèriques; no s’ha d’utilitzar com a informació real.
+[Guia de la demostració](examples/README.md): recerca sobre matèria fosca basada en dos articles reals, amb DOI, versions
+i referències verificables. Inclou fitxes, mètodes, una comparació d’evidències
+i preguntes de recerca. Parteix de resums propis dels abstracts, amb la
+lectura íntegra dels articles identificada com a pendent.
 
-Els exemples ajuden a entendre l’ús, però no són una estructura obligatòria
-ni s’inclouen a la skill instal·lada. Es pot eliminar tota la carpeta
-`examples/` sense afectar les eines. No els copiïs al `raw/` d’una volta real.
-La prova de l’exemple s’omet si s’ha eliminat la carpeta.
+Obre **`examples/demo/`** com a volta a Obsidian i entra a `wiki/index.md`.
+Els exemples estan identificats, no es carreguen automàticament i no formen
+part de la skill instal·lada. Pots eliminar `examples/` sense afectar l'ús;
+la prova de la demostració s'omet si s'ha eliminat. No els barregis amb les
+fonts de la teva volta real. La demostració és una possibilitat d'organització,
+no una plantilla obligatòria.
 
 ## Carpetes
 
-- `skills/garbell/`: skill autocontinguda i comprovador de canvis.
-- `agents/`: rols opcionals de coordinació i revisió; no s’activen sols.
+- `skills/garbell/`: instruccions, referències i comprovador opcional.
+- `agents/`: rols opcionals de coordinació i revisió; no s'activen sols.
 - `context/`: objectiu i decisions del producte.
 - `memory/`: resums locals opcionals, exclosos de la distribució.
-- `examples/`: demostració fictícia eliminable.
-- `scripts/` i `tests/`: empaquetament i verificació independents.
+- `examples/`: demostració eliminable.
+- `scripts/` i `tests/`: eines de distribució i proves del projecte.
 
-## Verificar i empaquetar
+## Comprovacions auxiliars de la volta
 
-Python 3.10 o superior en Linux/macOS (`fcntl`). La síntesi la fa l’agent;
-l’OCR i la transcripció depenen de les eines disponibles.
+L'eina `skills/garbell/scripts/vault_state.py` requereix Python 3.10 o superior
+en Linux/macOS (`fcntl`) i només biblioteca estàndard. Aquests comandaments
+s'executen des de `skills/garbell/`, habitualment per l'agent:
+
+| Funció | Objectiu | Efecte |
+|---|---|---|
+| `scan` | Comparar fonts i notes amb l'estat desat; assenyalar canvis, absències i duplicats | Només lectura |
+| `links` | Detectar destins de wikilinks inexistents o ambigus | Només lectura |
+| `accept` | Registrar la font revisada i les empremtes de les notes dependents | Escriu `.wiki/state.json` |
+
+```sh
+python3 scripts/vault_state.py scan /ruta/volta
+python3 scripts/vault_state.py links /ruta/volta
+```
+
+La sintaxi d'`accept` i els criteris previs són a [l'esquema](skills/garbell/references/schema.md).
+L'eina no resumeix documents, no valida cites ni coneixement i no comprova
+àncores, enllaços Markdown o metadades. La revisió de contingut continua
+sent necessària. L'OCR i la transcripció depenen dels lectors disponibles.
+
+## Provar el projecte i preparar-ne una distribució
+
+Aquest apartat és per a qui modifica o comparteix el projecte. **No cal
+executar-lo per utilitzar la skill ni per obrir una volta a Obsidian.**
+Amb Python, des de l'arrel del projecte:
 
 ```sh
 python3 -B -m unittest discover -s tests
@@ -51,12 +111,15 @@ python3 scripts/distribute.py
 python3 scripts/distribute.py --without-examples
 ```
 
-Es generen un ZIP i un manifest a `dist/`. El manifest enumera exclusivament
-els fitxers distribuïbles. Ni voltes personals, ni converses ni secrets
-formen part del paquet. La llicència continua pendent de decisió.
+El primer comandament comprova les utilitats, la protecció d'edicions humanes
+i els enllaços de la demostració. El segon genera un ZIP i un manifest de
+fitxers distribuïbles a `dist/`. El tercer prepara una versió sense exemples;
+**no és una opció per desactivar Python**. Sense Python, pots copiar la carpeta
+`skills/garbell/` directament i compartir els fitxers seleccionats sense generar
+el paquet automàtic. Memòria local, voltes personals, converses i secrets
+queden fora de la distribució automàtica. La llicència continua pendent de decisió.
 
 ## Projecte relacionat
 
-[Farcell](https://github.com/daniel-alomar/farcell) és un projecte
-separat: la base general per construir coneixement de qualsevol tema.
-La relació és informativa; no hi ha dependència entre instal·lacions.
+[Farcell](https://github.com/daniel-alomar/farcell) organitza documents i informació de qualsevol
+tema en coneixement connectat, amb perfils adaptables a cada ús.

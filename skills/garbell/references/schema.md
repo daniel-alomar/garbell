@@ -50,7 +50,11 @@ cadascuna. Afegeix desacords, condicions en què els resultats són aplicables i
 buits de coneixement. Les fonts d'una revisió no es converteixen en fonts
 primàries llegides: si no les has llegit, indica la citació secundària.
 
-## Eina d'estat (Python 3, biblioteca estàndard)
+## Eina d'estat opcional (Python 3.10+, biblioteca estàndard)
+
+Aquests comandaments només s'utilitzen en mode amb Python. En mode manual
+aplica [el procediment alternatiu](tooling.md); `source_sha256` queda a `null`.
+El comprovador requereix `fcntl` (Linux/macOS).
 
 Des de la carpeta de la skill:
 

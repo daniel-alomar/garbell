@@ -5,9 +5,9 @@ description: Crear, actualitzar i consultar una volta Obsidian de recerca a part
 
 # Garbell
 
-Els exemples del projecte són ficticis i opcionals. No els incorporis a una
-volta real ni els tractis com a evidència científica. Només llegeix-los si
-l'usuari demana una demostració o un exemple de format.
+Els exemples del projecte són opcionals i estan identificats com a demostració.
+No els incorporis a una volta real ni els utilitzis com a corpus de l'usuari.
+Només llegeix-los si es demana una demostració o un exemple de format.
 
 Construeix una wiki de recerca traçable. La wiki és un índex i una síntesi
 revisable; les fonts originals continuen sent l'evidència. Aquesta skill
@@ -39,10 +39,17 @@ No inventis el tema del doctorat. Les categories es concreten amb les fonts.
 Adapta [el contracte de la volta](references/vault-contract.md) com a AGENTS.md
 de la volta, sense substituir instruccions existents.
 
+## Eines opcionals
+
+Abans d'incorporar o mantenir fonts, llegeix [els modes de treball](references/tooling.md).
+Python és opcional. Respecta `tooling` a `knowledge.yaml` i la petició de
+l'usuari; en mode manual substitueix `scan`, `links` i `accept` pel procediment
+de lectura, revisió d'enllaços i registre descrit allà.
+
 ## Incorporar o actualitzar documents
 
 Llegeix [els criteris de recerca](references/research.md) i
-[l'esquema](references/schema.md). Executa el comprovador amb Python 3
+[l'esquema](references/schema.md). En mode amb Python, executa el comprovador
 des del directori de la skill (substitueix VAULT per la ruta real):
 
 ```sh
@@ -76,7 +83,8 @@ actualitza els enllaços; no fusionis versions diferents només pel títol.
    a tota la wiki i revisa les afirmacions afectades. Conserva la contradicció
    i la història; una font nova no invalida automàticament l'anterior.
 6. Abans d'editar una pàgina existent, consulta els canvis locals que informa
-   `scan`. Si ha canviat des de la darrera acceptació, conserva l'edició humana
+   `scan` o la revisió manual. Si ha canviat des de la darrera base verificada,
+   conserva l'edició humana
    i escriu una proposta a `wiki/propostes/`. No actualitzis l'empremta d'aquella
    pàgina com si haguessis resolt el conflicte. Les notes personals són només
    de lectura durant aquest flux.
@@ -84,13 +92,15 @@ actualitza els enllaços; no fusionis versions diferents només pel títol.
    proposa canvis separats. No acceptis fonts amb dependències en conflicte.
 7. Conserva una còpia dels fitxers generats que modificaràs a
    `.wiki/backups/<identificador-execucio>/`. Fes canvis petits, actualitza
-   l'índex i afegeix al registre les fonts, empremtes, fitxers afectats,
+   l'índex i afegeix al registre les fonts, empremtes disponibles, fitxers afectats,
    pendents i verificacions. No esborris historial.
-8. Executa `links VAULT` i revisa manualment metadades, evidència i coherència.
+8. En mode amb Python executa `links VAULT`; en manual revisa els destins.
+   Revisa també metadades, evidència i coherència.
    No confonguis validació d'enllaços amb validació científica.
-9. Només després de completar la revisió, registra cada font amb `accept`
-   (vegeu l'esquema). Passa l'empremta obtinguda ABANS de llegir la font; si ha
+9. Només després de completar la revisió, en mode amb Python registra cada
+   font amb `accept` (vegeu l'esquema). Passa l'empremta obtinguda ABANS de llegir la font; si ha
    canviat durant el procés, l'acceptació fallarà i caldrà tornar-la a llegir.
+   En manual, documenta la lectura i les dependències al registre, sense empremtes inventades.
    Si el procés s'interromp, reprèn a partir de l'inventari i dels pendents,
    sense donar per vàlids els fitxers parcials.
 
