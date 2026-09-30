@@ -6,6 +6,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parents[1]
 NAME = next((ROOT/'skills').iterdir()).name
+DEMO_GRAPH = 'examples/demo/.obsidian/graph.json'
 ALLOWED = {'README.md','AGENTS.md','.gitignore','skills','context','agents','scripts','tests','examples'}
 
 def manifest(root=ROOT, examples=True):
@@ -14,11 +15,12 @@ def manifest(root=ROOT, examples=True):
         rel = p.relative_to(root)
         if rel.parts[0] not in ALLOWED or (not examples and rel.parts[0]=='examples'):
             continue
-        if rel.as_posix() != '.gitignore' and any(x.startswith('.') or x=='__pycache__' for x in rel.parts):
+        is_demo_graph = rel.as_posix() == DEMO_GRAPH
+        if not is_demo_graph and rel.as_posix() != '.gitignore' and any(x.startswith('.') or x=='__pycache__' for x in rel.parts):
             continue
         if p.is_symlink() or any(q.is_symlink() for q in p.parents):
             raise ValueError(f'Symlink excluded: {p}')
-        if p.is_file() and (p.suffix in {'.md','.py','.yaml','.toml'} or rel.as_posix()=='.gitignore'):
+        if p.is_file() and (p.suffix in {'.md','.py','.yaml','.toml'} or rel.as_posix()=='.gitignore' or is_demo_graph):
             data[rel.as_posix()] = p.read_text(encoding='utf-8')
     return data
 

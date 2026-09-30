@@ -46,3 +46,7 @@ Elimina `examples/` quan ja no el necessitis. També pots generar un paquet
 sense exemples amb `python3 scripts/distribute.py --without-examples`, o copiar
 només `skills/garbell/`. Les publicacions mantenen els seus drets i llicències;
 aquí s'inclouen resums propis breus amb atribució, no còpies dels articles.
+
+La carpeta oculta `demo/.obsidian/` inclou únicament el perfil de graf de
+la demostració. Conserva-la quan copiïs l'exemple si vols veure els colors
+preparats. Aquesta ajuda visual és opcional i no forma part de la skill.

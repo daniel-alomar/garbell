@@ -26,7 +26,7 @@ síntesi les fa l'agent. Obsidian permet navegar i editar el resultat.
 Exemple de petició (substitueix les rutes per les teves):
 
 > Utilitza $garbell. Organitza els articles de `/ruta/articles` en una volta a
-> `/ruta/volta-recerca`, en català. Conserva els originals i crea fitxes
+> `/ruta/volta-recerca`. Conserva els originals i crea fitxes
 > bibliogràfiques amb cites verificables. Compara resultats i mètodes,
 > distingeix evidència i interpretació, i assenyala lectures pendents.
 
@@ -50,6 +50,23 @@ automàtica per empremtes de duplicats, modificacions de notes i canvis de
 fonts durant el procés; el manteniment pot requerir més relectures. Si no
 pot llegir un format sense Python, el deixa pendent i explica el motiu.
 
+**Qui executa Python?** L'agent, si disposa d'una eina per executar
+comandaments i accés als fitxers. L'usuari demana la tasca en llenguatge natural;
+no ha de copiar comandaments durant l'ús habitual. Tenir Python instal·lat
+no és suficient si l'entorn de l'agent no permet executar-lo. Els comandaments
+de més avall són documentació per al manteniment i la diagnosi.
+
+| Mode | Avantatges | Costos i limitacions |
+|---|---|---|
+| Amb Python | Comprovacions repetibles d'enllaços; detecció per empremtes de canvis i duplicats; protecció davant canvis de la font entre lectura i acceptació | Requereix Python 3.10+, `fcntl` i execució de comandaments; llegir fitxers per calcular empremtes consumeix temps en corpus grans; cal mantenir l'estat local |
+| Sense Python | Menys requisits d'execució; útil en entorns amb lectors i edició de fitxers però sense intèrpret | Més relectura i revisió per l'agent; menys detecció automàtica de canvis i duplicats; alguns formats poden quedar pendents |
+
+En tots dos modes, l'agent fa la síntesi i revisa les evidències. Python
+no valida la veritat dels continguts ni substitueix la revisió humana.
+Recomanació: `auto` per a l'ús habitual; `manual` quan no vulguis executar
+Python o l'entorn no ho permeti. «Manual» vol dir que l'agent fa les
+comprovacions amb les altres eines, no que l'usuari hagi de fer-les totes.
+
 Per defecte `tooling: auto` utilitza el comprovador quan és disponible; si
 no ho és, aplica el procediment manual. `tooling: python` demana explícitament
 les comprovacions automàtiques. [Detall dels modes](skills/garbell/references/tooling.md).
@@ -67,6 +84,13 @@ part de la skill instal·lada. Pots eliminar `examples/` sense afectar l'ús;
 la prova de la demostració s'omet si s'ha eliminat. No els barregis amb les
 fonts de la teva volta real. La demostració és una possibilitat d'organització,
 no una plantilla obligatòria.
+
+## Recomanació opcional: graf de colors
+
+Els colors són una ajuda de navegació d'Obsidian. La skill pot treballar sense
+ells i no configura automàticament el graf de les voltes personals.
+La demostració inclou un perfil de colors preparat; la seva guia explica
+com obrir el graf, interpretar la llegenda i canviar-la o retirar-la.
 
 ## Carpetes
 
@@ -118,6 +142,17 @@ fitxers distribuïbles a `dist/`. El tercer prepara una versió sense exemples;
 `skills/garbell/` directament i compartir els fitxers seleccionats sense generar
 el paquet automàtic. Memòria local, voltes personals, converses i secrets
 queden fora de la distribució automàtica. La llicència continua pendent de decisió.
+
+## Revistes i quartils: suport opcional
+
+Garbell pot mantenir un registre de les revistes rellevants per al corpus,
+amb indicadors verificats per sistema, any i categoria. Pot ajudar a entendre
+el context editorial o explorar on publicar. No inclou una llista fixa de
+«les millors revistes»: la pertinència depèn de la disciplina i els indicadors
+canvien. El quartil tampoc substitueix l'avaluació de cada estudi.
+
+[Guia i plantilla de registre](skills/garbell/references/journals.md).
+Les dades no consultades queden pendents; no s'assignen quartils per reputació.
 
 ## Projecte relacionat
 

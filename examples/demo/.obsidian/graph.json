@@ -1,0 +1,38 @@
+{
+  "search": "path:wiki/",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:wiki/fonts/",
+      "color": {
+        "a": 1,
+        "rgb": 29362
+      }
+    },
+    {
+      "query": "path:wiki/metodes/",
+      "color": {
+        "a": 1,
+        "rgb": 40563
+      }
+    },
+    {
+      "query": "path:wiki/preguntes/",
+      "color": {
+        "a": 1,
+        "rgb": 15113984
+      }
+    },
+    {
+      "query": "path:wiki/sintesis/",
+      "color": {
+        "a": 1,
+        "rgb": 13400487
+      }
+    }
+  ]
+}

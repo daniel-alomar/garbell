@@ -55,3 +55,10 @@ aquesta col·lecció, no una prova de novetat en tota la literatura.
 Les notes de l'agent mantenen `draft` o `needs-review`. Només una revisió
 humana explícita permet `reviewed`. La revisió de l'agent no és garantia
 d'exactitud científica ni d'exhaustivitat bibliogràfica.
+
+## Revistes i quartils opcionals
+
+Si es demana informació editorial o bibliomètrica, llegeix
+[revistes i indicadors](journals.md). Mantén any, categoria, sistema i
+procedència de cada dada. No tractis el prestigi o el quartil de la revista
+com a qualitat demostrada d'un article ni com a filtre automàtic del corpus.

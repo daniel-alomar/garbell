@@ -34,10 +34,24 @@ Les propietats `sources` i `source_notes` registren dependències; `read_scope`
 explica abast. `status: draft` no indica revisió humana. El graf mostra
 enllaços; llegir les notes explica el significat i els límits de les relacions.
 
-## Colors suggerits
+## Recomanació opcional: colors
 
 Als grups del graf d'Obsidian pots triar, per exemple, `path:wiki/fonts/`
 en blau, `path:wiki/metodes/` en verd i `path:wiki/preguntes/` en taronja.
-Són opcions de visualització que configures a l'aplicació, no propietats de
-validesa científica. No s'inclouen preferències personals ni plugins.
+La demostració inclou aquests grups a `.obsidian/graph.json`, amb les síntesis
+en violeta. Són ajudes de navegació, no propietats de validesa científica.
 [Ajuda oficial del graf](https://obsidian.md/help/plugins/graph).
+
+### Veure els colors de la demostració
+
+Obre la carpeta completa `examples/demo/` com a volta i després la vista de
+graf global. No n'hi ha prou amb copiar només `wiki/`: la carpeta oculta
+`.obsidian/` conté el perfil. Si ja tenies aquesta volta oberta quan s'ha
+afegit el fitxer, tanca-la i torna-la a obrir. La demostració filtra el graf
+per les notes de `wiki/`; pots canviar aquest filtre.
+
+Els colors són opcionals i es poden modificar a Grups o restablir des de la
+configuració del graf. No copiïs el perfil sobre les preferències d'una volta
+personal sense revisar-lo. El graf local pot tenir opcions pròpies.
+El format del perfil s'ha comprovat com a JSON; la visualització no s'ha
+validat en una sessió gràfica d'Obsidian en aquesta revisió.

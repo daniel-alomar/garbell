@@ -19,7 +19,7 @@ source_notes: []
 ```
 
 L'exemple mostra el format, no una font real. `type`: source, concept, method,
-synthesis, question, author. Les notes d'autor són opcionals i segueixen
+synthesis, question, author; `journal` per al registre opcional de revistes. Les notes d'autor són opcionals i segueixen
 [els criteris de recerca](research.md). `status`: draft, reviewed, needs-review. `reviewed` es
 reserva a una revisió humana explícita; la verificació de l'agent no l'atorga.
 `id` ha de ser únic i estable encara que canviï el títol. Dates ISO reals.

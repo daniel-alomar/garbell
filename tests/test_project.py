@@ -1,4 +1,5 @@
 import hashlib
+import json
 import importlib.util
 from pathlib import Path
 import tempfile
@@ -27,6 +28,25 @@ class ProjectTests(unittest.TestCase):
         example=ROOT/'examples/demo'
         if not example.exists(): self.skipTest('Exemples opcionals eliminats')
         self.assertEqual(STATE.links(example)['issues'],[])
+    def test_demo_graph_only_configuration_distributed(self):
+        with tempfile.TemporaryDirectory() as d:
+            r=Path(d)
+            graph='examples/demo/.obsidian/graph.json'
+            for path in (graph, 'examples/demo/.obsidian/workspace.json',
+                         'examples/demo/.obsidian/plugins/private/data.json',
+                         'examples/other/.obsidian/graph.json'):
+                f=r/path; f.parent.mkdir(parents=True,exist_ok=True); f.write_text('{}')
+            self.assertEqual(set(DIST.manifest(r)), {graph})
+            self.assertEqual(DIST.manifest(r, examples=False), {})
+        example=ROOT/'examples/demo/.obsidian/graph.json'
+        if example.exists():
+            config=json.loads(example.read_text())
+            self.assertTrue(config['colorGroups'])
+            for group in config['colorGroups']:
+                self.assertTrue(group['query'])
+                self.assertIsInstance(group['color']['rgb'],int)
+                self.assertTrue(0 <= group['color']['rgb'] <= 0xffffff)
+
     def test_examples_optional_and_private_excluded(self):
         data=DIST.manifest(examples=False)
         self.assertTrue('skills/garbell/SKILL.md' in data)

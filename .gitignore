@@ -11,3 +11,8 @@
 .env.*
 
 /dist/
+
+# Only the authored demo graph is distributable; all personal UI state stays ignored.
+!/examples/demo/.obsidian/
+/examples/demo/.obsidian/*
+!/examples/demo/.obsidian/graph.json
