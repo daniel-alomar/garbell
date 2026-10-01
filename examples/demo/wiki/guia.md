@@ -16,7 +16,7 @@ síntesi dels resultats dels articles.
 
 | Peça | Què representa | Com explorar-la |
 |---|---|---|
-| `raw/` | Resums documentals propis de dos abstracts reals | Segueix DOI i URL cap als articles |
+| `raw/` | Resums documentals propis de tres abstracts reals | Segueix DOI i URL cap als articles |
 | `wiki/fonts/` | Metadades, versió i abast llegit | Consulta la procedència abans de reutilitzar una conclusió |
 | `wiki/metodes/` | Notes sobre els mètodes dels documents seleccionats | Torna a la fitxa per veure el límit de lectura |
 | `wiki/conceptes/` | Pauta analítica d'evidència, model i abast | Distingeix les propostes de l'agent dels resultats atribuïts |
@@ -62,3 +62,8 @@ validat en una sessió gràfica d'Obsidian en aquesta revisió.
 [[wiki/tipus-documents|tipus de document]] distingeix naturalesa, format
 i material consultat. Els dos catàlegs remeten a les fitxes i no impliquen
 lectura completa dels papers.
+
+L'ampliació amb [[wiki/fonts/planck-2020|Planck]] ofereix una
+[[wiki/sintesis/tres-vies|matriu de comparació]] i un
+[[wiki/preguntes/pla-lectura|pla de lectura]]: permet recuperar fonts i ordenar
+les comprovacions necessàries abans d'escriure conclusions.

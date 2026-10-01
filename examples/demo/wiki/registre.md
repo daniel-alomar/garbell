@@ -17,3 +17,8 @@ les notes conserven `status: draft`. No s'ha actualitzat cap corpus personal.
 2026-10-01. Afegits catàlegs de revistes i tipus documentals. Classificació
 basada en metadades i abstracts arXiv v1 de Clowe i v4 de LZ; el format
 Letter de LZ consta a l’abstract. Es manté pendent la lectura íntegra.
+
+2026-10-01. Afegit resum propi de Planck 2018 VI, amb publicació de 2020
+i arXiv v4 de 2021. Consultades metadades i abstract; correcció i text complet
+pendents. Afegides fitxa, nota de mètode, matriu de tres vies i pla de lectura;
+actualitzats catàlegs i índex. Mode manual; sense acceptació de papers íntegres.

@@ -1,8 +1,8 @@
 # Garbell: preguntes de recerca sobre matèria fosca
 
-Demostració basada en dues publicacions reals. Els fitxers de `demo/raw/`
+Demostració basada en tres publicacions reals. Els fitxers de `demo/raw/`
 són **resums propis dels abstracts**, amb metadades i enllaços verificats
-el 2026-09-30; no són els articles íntegres ni cites literals. El contingut
+entre el 2026-09-30 i el 2026-10-01; no són els articles íntegres ni cites literals. El contingut
 bibliogràfic no és fictici. L'organització de la volta i les preguntes són
 propostes didàctiques, no una tesi ni una revisió exhaustiva de la literatura.
 
@@ -15,14 +15,17 @@ propostes didàctiques, no una tesi ni una revisió exhaustiva de la literatura.
   Preprint inicial de 2022, [versió v4 de 2023](https://arxiv.org/abs/2207.03764v4),
   [DOI de la publicació](https://doi.org/10.1103/PhysRevLett.131.041002).
 
+- Planck Collaboration, N. Aghanim et al., *Planck 2018 results. VI. Cosmological parameters*,
+  publicació de 2020, [arXiv v4 de 2021](https://arxiv.org/abs/1807.06209v4),
+  [DOI](https://doi.org/10.1051/0004-6361/201833910).
+
 La selecció històrica serveix per comparar preguntes i mètodes. No pretén
 mostrar els resultats més recents ni concloure l'estat actual de la recerca.
 
 ## Explorar el resultat
 
-Obre **`demo/`** a Obsidian i entra a `wiki/index.md`. Hi trobaràs dues fitxes,
-dues notes de mètode, una de concepte, una d'autoria col·lectiva, una síntesi
-i una pregunta. Segueix síntesi → mètode → fitxa → resum documental → article.
+Obre **`demo/`** a Obsidian i entra a `wiki/index.md`. Hi trobaràs tres fitxes, notes de mètode i concepte, autoria col·lectiva,
+síntesis comparatives i preguntes amb un pla de lectura. Segueix síntesi → mètode → fitxa → resum documental → article.
 [La guia de lectura](demo/wiki/guia.md) explica què representa cada peça i
 com visualitzar-la. Consulta `wiki/pendents.md`: llegir el resum no completa la ingestió de l'article.
 
@@ -53,3 +56,5 @@ preparats. Aquesta ajuda visual és opcional i no forma part de la skill.
 
 La demostració inclou també `wiki/revistes.md` i `wiki/tipus-documents.md`,
 amb els treballs agrupats i la classificació explicada a les fitxes.
+
+[Recorregut pràctic per consultar, comparar i ampliar la volta](PASSEIG.md).

@@ -104,8 +104,23 @@ Python o l'entorn no ho permeti. «Manual» vol dir que l'agent fa les
 comprovacions amb les altres eines, no que l'usuari hagi de fer-les totes.
 
 Per defecte `tooling: auto` utilitza el comprovador quan és disponible; si
-no ho és, aplica el procediment manual. `tooling: python` demana explícitament
+no ho és, l’agent explica el motiu i et proposa preparar l’entorn o
+continuar sense Python. Espera la teva tria abans de canviar el mode. `tooling: python` demana explícitament
 les comprovacions automàtiques. [Detall dels modes](skills/garbell/references/tooling.md).
+
+### Si Python no està disponible
+
+L'agent t'explica el problema amb paraules entenedores i et proposa:
+
+1. **Rebre ajuda per instal·lar o preparar Python**, amb instruccions per al
+   teu sistema i l'entorn de l'agent. La instal·lació no es fa automàticament.
+2. **Continuar sense Python**, conservant notes, cites, connexions i consultes,
+   amb menys detecció automàtica de canvis i duplicats i més revisió per l'agent.
+
+No canvia de mode sense la teva decisió. Si ja has triat el mode manual,
+no repeteix aquesta pregunta en cada execució. També distingeix entre Python
+absent i un agent que no pot executar comandaments: instal·lar-lo al teu
+ordinador no resol necessàriament una limitació de l'entorn remot.
 
 ### Requisits i llibreries
 
@@ -126,7 +141,7 @@ una llibreria d'IA obligatòria dins dels scripts del projecte.
 
 ## Exemples opcionals
 
-[Guia de la demostració](examples/README.md): recerca sobre matèria fosca basada en dos articles reals, amb DOI, versions
+[Guia de la demostració](examples/README.md): recerca sobre matèria fosca basada en tres articles reals, amb DOI, versions
 i referències verificables. Inclou fitxes, mètodes, una comparació d’evidències
 i preguntes de recerca. Parteix de resums propis dels abstracts, amb la
 lectura íntegra dels articles identificada com a pendent.
@@ -137,6 +152,9 @@ part de la skill instal·lada. Pots eliminar `examples/` sense afectar l'ús;
 la prova de la demostració s'omet si s'ha eliminat. No els barregis amb les
 fonts de la teva volta real. La demostració és una possibilitat d'organització,
 no una plantilla obligatòria.
+
+El [recorregut pràctic](examples/PASSEIG.md) inclou peticions, respostes
+esperades i una incorporació en dues etapes per veure com evoluciona la volta.
 
 ## Recomanació opcional: graf de colors
 

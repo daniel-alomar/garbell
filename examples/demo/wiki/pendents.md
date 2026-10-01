@@ -10,3 +10,7 @@
   construir una prova d'incompatibilitat. No hi ha resposta en aquest corpus.
 
 No s'han incorporat PDF ni assignat números de pàgina no consultats.
+
+- Planck, arXiv 1807.06209v4: falta llegir el text complet i la correcció
+  indicada a les metadades. No s'ha avaluat si afecta les futures afirmacions
+  de la volta. S'han consultat només metadades i abstract.

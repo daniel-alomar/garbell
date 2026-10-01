@@ -1,12 +1,12 @@
 ---
-id: demo-tipus-documents
-type: map
-status: draft
+id: "demo-tipus-documents"
+type: "map"
+status: "draft"
 created: "2026-10-01"
 updated: "2026-10-01"
-tags: [demostracio]
-sources: ["raw/clowe-2006.md", "raw/lz-2023.md"]
-source_notes: ["wiki/fonts/clowe-2006", "wiki/fonts/lz-2023"]
+tags: ["demostracio"]
+sources: ["raw/clowe-2006.md", "raw/lz-2023.md", "raw/planck-2020.md"]
+source_notes: ["wiki/fonts/clowe-2006", "wiki/fonts/lz-2023", "wiki/fonts/planck-2020"]
 ---
 
 # Tipus de document representats
@@ -16,6 +16,7 @@ source_notes: ["wiki/fonts/clowe-2006", "wiki/fonts/lz-2023"]
 | Treball | Format editorial | Material efectivament consultat |
 |---|---|---|
 | [[wiki/fonts/clowe-2006|Clowe et al.]] | Pendent de comprovació | Metadades i abstract arXiv v1 |
+| [[wiki/fonts/planck-2020|Planck]] | Pendent de comprovació | Metadades i abstract arXiv v4 |
 | [[wiki/fonts/lz-2023|LZ]] | Letter, declarat a l'abstract | Metadades i abstract arXiv v4 |
 
 La classificació es basa en l'objectiu i els resultats descrits als abstracts;

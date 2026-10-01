@@ -42,7 +42,9 @@ de la volta, sense substituir instruccions existents.
 ## Eines opcionals
 
 Abans d'incorporar o mantenir fonts, llegeix [els modes de treball](references/tooling.md).
-Python és opcional. Respecta `tooling` a `knowledge.yaml` i la petició de
+Python és opcional. Si no es pot usar en mode `auto` o `python`, explica
+la causa i ofereix ajuda per preparar-lo o continuar sense Python; espera
+la tria segons el diàleg de requisits. Respecta `tooling` a `knowledge.yaml` i la petició de
 l'usuari; en mode manual substitueix `scan`, `links` i `accept` pel procediment
 de lectura, revisió d'enllaços i registre descrit allà.
 

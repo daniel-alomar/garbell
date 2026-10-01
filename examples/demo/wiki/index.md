@@ -21,3 +21,11 @@ de lectura i una proposta de colors per al graf.
 
 Explora també les [[wiki/revistes|revistes del corpus]] i els
 [[wiki/tipus-documents|tipus de document]].
+
+## Preparar una lectura comparativa
+
+La tercera font, [[wiki/fonts/planck-2020|Planck]], amplia el corpus. La
+[[wiki/sintesis/tres-vies|matriu de tres vies]] i el
+[[wiki/preguntes/pla-lectura|pla de lectura]] mostren com preparar una síntesi
+sense donar per completades les verificacions pendents. El recorregut extern
+`examples/PASSEIG.md` inclou preguntes i resultats esperats.
