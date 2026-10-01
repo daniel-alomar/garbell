@@ -33,7 +33,7 @@ i revisa el resultat seguint passos. No cal executar dos agents.
 
 Copia `skills/garbell/` al directori de skills del teu agent, o demana-li que
 llegeixi `skills/garbell/SKILL.md`. Necessites un agent capaç de llegir les
-fonts i escriure fitxers. La skill s'invoca com a `$garbell`; la lectura i
+fonts i escriure fitxers. En Codex, la skill s'invoca com a `$garbell`; la lectura i
 síntesi les fa l'agent. Obsidian permet navegar i editar el resultat.
 
 Exemple de petició (substitueix les rutes per les teves):
@@ -48,7 +48,30 @@ El punt d'entrada és `wiki/index.md`. Obrir només `wiki/` deixa fora les fonts
 que necessiten els enllaços de la demostració. La skill treballa sota demanda;
 una execució periòdica requereix acordar el calendari i les carpetes.
 
-## Ús amb Python o sense
+## Ús amb altres agents d'IA
+
+El nucli és portable: instruccions Markdown, referències i scripts locals,
+sense crides a una API d'OpenAI ni dependència del seu SDK. Requereix un agent
+amb accés de lectura i escriptura a les fonts i a la volta; un xat sense
+accés als fitxers no pot mantenir directament aquesta carpeta.
+
+Claude Code admet el mateix format de skill. Copia tota la carpeta
+`skills/garbell/` a `~/.claude/skills/garbell/` i invoca `/garbell`.
+La sintaxi `$garbell` dels exemples correspon a Codex. Consulta la
+[documentació de Claude Code](https://code.claude.com/docs/en/skills).
+
+`agents/openai.yaml`, dins de la skill, és metadada específica de Codex i
+no forma part del procediment necessari per a Claude. Els rols de `agents/`
+continuen sent guies opcionals, no subagents instal·lats de Claude.
+Per carregar les instruccions contextuals del projecte a Claude Code, demana
+que llegeixi `AGENTS.md` o referencia'l des del `CLAUDE.md` existent, sense
+substituir-lo. [Context de projecte a Claude Code](https://code.claude.com/docs/en/memory).
+
+La compatibilitat de format està documentada; encara no s'ha fet una prova
+completa d'aquests projectes amb Claude Code. Altres entorns de Claude o
+d'altres proveïdors poden requerir una instal·lació i permisos diferents.
+
+## Auxiliar amb Python
 
 **Python és opcional.** Pots crear, consultar i mantenir la volta amb l'agent
 i Obsidian, sempre que l'agent disposi de les eines necessàries per llegir
@@ -84,6 +107,23 @@ Per defecte `tooling: auto` utilitza el comprovador quan és disponible; si
 no ho és, aplica el procediment manual. `tooling: python` demana explícitament
 les comprovacions automàtiques. [Detall dels modes](skills/garbell/references/tooling.md).
 
+### Requisits i llibreries
+
+No cal instal·lar paquets amb `pip`: les utilitats del projecte utilitzen
+exclusivament la biblioteca estàndard de **Python 3.10 o superior**.
+
+| Component | Mòduls utilitzats | Requisit particular |
+|---|---|---|
+| Inventari, enllaços i acceptació | `argparse`, `collections`, `datetime`, `fcntl`, `hashlib`, `json`, `os`, `pathlib`, `re`, `tempfile` | `fcntl` és propi d'entorns Unix: Linux/macOS; el comprovador no funciona amb Python natiu de Windows |
+| Empaquetament | `argparse`, `json`, `pathlib`, `zipfile` | La compressió ZIP necessita `zlib`, habitualment inclòs amb Python |
+| Proves | `unittest`, `importlib.util` i mòduls estàndard de fitxers/empremtes | Importen el comprovador i, per tant, també requereixen `fcntl` |
+
+En Windows es pot utilitzar un entorn Linux com WSL amb Python, o triar
+el mode manual. `fcntl` no és un paquet que s'hagi d'instal·lar amb `pip`.
+Els lectors de PDF/DOCX, l'OCR i la transcripció no estan inclosos en aquestes
+utilitats: poden requerir altres eines segons l'entorn de l'agent. No hi ha
+una llibreria d'IA obligatòria dins dels scripts del projecte.
+
 ## Exemples opcionals
 
 [Guia de la demostració](examples/README.md): recerca sobre matèria fosca basada en dos articles reals, amb DOI, versions
@@ -109,7 +149,7 @@ com obrir el graf, interpretar la llegenda i canviar-la o retirar-la.
 
 - `skills/garbell/`: instruccions, referències i comprovador opcional.
 - `agents/`: guies de rols opcionals, no agents executables.
-- `docs/ca/`: explicació del funcionament i preparació de la documentació bilingüe.
+- `docs/ca/`: guies de funcionament del projecte.
 - `context/`: objectiu i decisions del producte.
 - `memory/`: resums locals opcionals, exclosos de la distribució.
 - `examples/`: demostració eliminable.
@@ -167,14 +207,6 @@ canvien. El quartil tampoc substitueix l'avaluació de cada estudi.
 
 [Guia i plantilla de registre](skills/garbell/references/journals.md).
 Les dades no consultades queden pendents; no s'assignen quartils per reputació.
-
-## Idiomes de la documentació
-
-La documentació actual és en català. Per a la versió pública, es proposa
-mantenir guies completes en català i anglès amb enllaços entre versions,
-conservant una sola implementació de la skill.
-[Organització i manteniment de les traduccions](docs/ca/idiomes.md).
-La traducció anglesa completa queda pendent de preparar.
 
 ## Projecte relacionat
 
