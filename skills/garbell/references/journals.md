@@ -1,67 +1,72 @@
-# Revistes i indicadors: context opcional de la recerca
+# Revistes i tipus de document del corpus
 
-Llegeix aquesta referència quan l'usuari demani contextualitzar revistes,
-registrar quartils o explorar on publicar. No és un filtre d'ingestió ni una
-llista universal de revistes prestigioses. Tria les revistes segons la
-pregunta, disciplina i corpus; una revista generalista no substitueix una
-revista especialitzada pertinent.
+Consulta aquesta guia en incorporar o actualitzar fonts. Mantén dues vies
+complementàries de navegació: per revista i per tipus de document. L'agent
+les actualitza amb Markdown i enllaços; no requereixen plugins d'Obsidian.
 
-## Com interpretar les dades
+## Llistat de revistes
 
-Un quartil és una posició relativa dins una classificació. Registra sempre
-el sistema, la mètrica, l'any de dades i la categoria. Una revista pot tenir
-més d'una categoria i quartils diferents; conserva'ls, sense triar només el
-més favorable. El JIF de JCR i l'SJR de SCImago són indicadors diferents;
-no traslladis el quartil d'un a l'altre ni un valor actual a l'any de l'article.
-Q1 representa el grup superior de la classificació corresponent, no una
-certificació de la validesa dels articles. Respecta els quartils publicats
-pel proveïdor, inclosos empats i casos sense classificació.
+Crea `wiki/revistes.md` quan hi hagi documents amb revista identificada.
+Agrupa pel títol normalitzat de la revista i enllaça totes les fitxes del
+corpus que hi corresponen. La unitat del recompte és el treball bibliogràfic,
+no cada còpia o versió. Conserva el nom original o l'abreviatura com a àlies
+quan la correspondència estigui verificada. Un ISSN conegut ajuda a distingir
+títols semblants; no fusionis revistes només per noms coincidents.
 
-JCR és un informe anual i Clarivate desaconsella utilitzar el JIF per avaluar
-articles individuals. La lectura de mètodes, evidències i limitacions continua
-sent necessària. [JCR](https://clarivate.com/academia-government/scientific-and-academic-research/research-funding-analytics/journal-citation-reports/).
-La classificació és per categoria i pot tenir empats:
-[explicació de Clarivate](https://clarivate.com/academia-government/blog/a-primer-on-ties-in-the-jcr/).
+Una taula suficient: revista | treballs del corpus | fitxes. Si aporta context,
+crea també una nota `type: journal` a `wiki/revistes/` amb títol, àlies, ISSN
+si consta i documents relacionats. No cal una pàgina per revista amb poc contingut.
+Les tesis, informes i documents sense revista continuen al catàleg documental;
+no se'ls ha d'assignar una revista fictícia. Un repositori de preprints no és
+la revista de publicació. No creïs llistats buits en una volta sense dades.
 
-## Registre verificable
+## Classificació de les fitxes
 
-Quan sigui útil, crea `wiki/revistes/` amb notes `type: journal` i el mateix
-esquema bàsic que la resta de notes. Identifica títol i ISSN només si s'han
-verificat, i enllaça els articles del corpus. Una entrada de mètrica pot
-seguir aquest format; els valors nuls són pendents, no zeros:
+Mantén `type: source` per al tipus de nota de la wiki. Afegeix aquests camps
+bibliogràfics quan es puguin determinar:
 
 ```yaml
+document_type: null
+editorial_format: null
+publication_version: null
 journal_title: null
-issn: []
-metrics:
-  - system: null          # JCR o SCImago, segons la font realment consultada
-    metric: null          # JIF, SJR o un altre indicador identificat
-    data_year: null
-    edition: null
-    category: null
-    quartile: null
-    value: null
-    source_url: null
-    accessed_on: null
-    verification_status: pending
+venue_title: null
+classification_evidence: []
 ```
 
-Consulta la font autoritzada, registra l'accés i desa evidència o localitzador
-segons els permisos disponibles. Declara aquesta evidència a `sources`,
-separada dels articles publicats per la revista. Si només tens un catàleg
-bibliogràfic, això verifica el nom de la revista, no el seu quartil.
-JCR pot requerir accés institucional; no pressuposis que hi ha accés.
-[SCImago Journal & Country Rank](https://www.scimagojr.com/) és un altre
-recurs de consulta: indica explícitament sistema i indicador.
+| Camp | Què descriu | Valors orientatius |
+|---|---|---|
+| `document_type` | Naturalesa del treball | `research_article`, `review`, `conference_paper`, `thesis`, `report`, `book`, `book_chapter`, `dataset`, `editorial`, `correspondence`, `other` |
+| `editorial_format` | Denominació editorial específica | `letter`, `short_communication`, `full_article`; conservar l'etiqueta original al cos |
+| `publication_version` | Versió efectivament consultada | `preprint`, `accepted_manuscript`, `version_of_record` |
+| `journal_title` | Revista on es publica el treball | Nom bibliogràfic verificat |
+| `venue_title` | Altres llocs de publicació | Congrés, actes o sèrie, quan pertoqui |
+| `classification_evidence` | Procedència de la classificació | Ruta/URL i pàgina, secció o camp de metadades |
 
-Si la dada no es pot consultar, deixa-la pendent amb el motiu. Si s'actualitza,
-conserva l'any anterior com una observació diferent. No refresquis indicadors
-ni iniciïs cerques recurrents sense que formin part de l'encàrrec.
-No prioritzis, excloguis ni donis per fiable un article només pel quartil.
+Són categories inicials ampliables segons la disciplina. Una revisió sistemàtica
+pot usar `document_type: review` amb el subtipus explicat al cos. «Paper» és
+un terme general: no l'utilitzis com a categoria si es pot precisar. Una Letter
+pot ser un article de recerca breu o una correspondència; decideix segons
+la denominació editorial i el contingut, no pel nom de la revista ni pel
+nombre de pàgines. «Physical Review Letters» és un títol de revista; no és
+per si sol evidència del format de tots els seus documents.
 
-## Quan aporta valor
+Un preprint d'un article manté el tipus d'article; la versió és una altra dada.
+Si hi ha diverses versions, descriu cadascuna amb el seu fitxer/URL i abast
+llegit, sense duplicar el treball com si fossin estudis diferents. La lectura
+d'un abstract es registra a `read_scope`, no com una versió editorial ni
+com una lectura íntegra. Deixa `null` i explica el dubte si no es pot classificar.
 
-És útil per descriure el context editorial del corpus o preparar una selecció
-de revistes candidates per publicar. En aquest últim cas també cal considerar
-abast temàtic, tipus d'article, públic, polítiques i condicions vigents.
-Per entendre què demostra un estudi, el registre de revistes és secundari.
+## Catàleg per tipus
+
+Crea `wiki/tipus-documents.md` amb els tipus presents, les fitxes corresponents
+i, quan constin, format i versió. Les dues pàgines de catàleg són `type: map`,
+amb els camps bàsics de l'esquema i dependències de les fonts que agrupen.
+Enllaça-les des de `wiki/index.md`. Revisa-les si s'afegeix una font, es
+corregeixen metadades o es resol la identitat entre versions. Preserva les
+edicions humanes i proposa canvis separats si hi ha conflicte.
+
+La classificació facilita recuperar materials; no implica haver-ne completat
+la lectura ni haver verificat l'estat de revisió per parells. Les voltes
+existents poden conservar metadades bibliomètriques aportades per l'usuari;
+aquest flux no les esborra ni les actualitza automàticament.

@@ -4,8 +4,8 @@
 
 La fitxa de font representa l'estudi/document, no tota l'obra d'un autor.
 Registra títol, autoria en l'ordre original, any i DOI/citekey quan constin.
-No dedueixis DOI ni identitat d'autor només d'un cognom. Distingeix preprint,
-article, tesi, informe, revisió i notes de reunió si la font ho especifica.
+No dedueixis DOI ni identitat d'autor només d'un cognom. Distingeix el tipus de treball (article, revisió, tesi, informe…) de la
+versió consultada (preprint, manuscrit acceptat, publicació final).
 No pressuposis revisió per parells pel format PDF.
 
 Conserva versions amb data i procedència. Si una font aportada informa d'una
@@ -56,9 +56,8 @@ Les notes de l'agent mantenen `draft` o `needs-review`. Només una revisió
 humana explícita permet `reviewed`. La revisió de l'agent no és garantia
 d'exactitud científica ni d'exhaustivitat bibliogràfica.
 
-## Revistes i quartils opcionals
+## Revistes i tipus de document
 
-Si es demana informació editorial o bibliomètrica, llegeix
-[revistes i indicadors](journals.md). Mantén any, categoria, sistema i
-procedència de cada dada. No tractis el prestigi o el quartil de la revista
-com a qualitat demostrada d'un article ni com a filtre automàtic del corpus.
+En incorporar fonts, aplica [l'organització del corpus](journals.md):
+registra revista, tipus, format editorial i versió quan constin. Mantén
+els catàlegs de revistes i de tipus de document amb enllaços a les fitxes.

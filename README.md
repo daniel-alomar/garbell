@@ -197,16 +197,19 @@ fitxers distribuïbles a `dist/`. El tercer prepara una versió sense exemples;
 el paquet automàtic. Memòria local, voltes personals, converses i secrets
 queden fora de la distribució automàtica. La llicència continua pendent de decisió.
 
-## Revistes i quartils: suport opcional
+## Revistes i tipus de document
 
-Garbell pot mantenir un registre de les revistes rellevants per al corpus,
-amb indicadors verificats per sistema, any i categoria. Pot ajudar a entendre
-el context editorial o explorar on publicar. No inclou una llista fixa de
-«les millors revistes»: la pertinència depèn de la disciplina i els indicadors
-canvien. El quartil tampoc substitueix l'avaluació de cada estudi.
+Garbell organitza les fonts també per revista i tipus de document. El
+llistat de revistes permet veure quines publicacions estan representades
+a la volta i accedir als treballs de cadascuna. El catàleg documental permet
+localitzar articles de recerca, revisions, treballs de congrés, tesis,
+informes i altres materials del corpus.
 
-[Guia i plantilla de registre](skills/garbell/references/journals.md).
-Les dades no consultades queden pendents; no s'assignen quartils per reputació.
+Cada fitxa pot indicar el format editorial —com ara una *Letter*— i la
+versió consultada: preprint, manuscrit acceptat o versió publicada. Així es
+pot distingir què és el document, on es publica i quina versió s'ha llegit.
+
+[Organització de revistes i documents](skills/garbell/references/journals.md).
 
 ## Projecte relacionat
 

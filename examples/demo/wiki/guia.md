@@ -55,3 +55,10 @@ configuració del graf. No copiïs el perfil sobre les preferències d'una volta
 personal sense revisar-lo. El graf local pot tenir opcions pròpies.
 El format del perfil s'ha comprovat com a JSON; la visualització no s'ha
 validat en una sessió gràfica d'Obsidian en aquesta revisió.
+
+## Navegar pel corpus bibliogràfic
+
+[[wiki/revistes|Revistes]] agrupa els treballs per publicació;
+[[wiki/tipus-documents|tipus de document]] distingeix naturalesa, format
+i material consultat. Els dos catàlegs remeten a les fitxes i no impliquen
+lectura completa dels papers.

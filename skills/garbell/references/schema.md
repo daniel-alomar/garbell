@@ -19,7 +19,7 @@ source_notes: []
 ```
 
 L'exemple mostra el format, no una font real. `type`: source, concept, method,
-synthesis, question, author; `journal` per al registre opcional de revistes. Les notes d'autor són opcionals i segueixen
+synthesis, question, author, map; `journal` per a notes de revista. Les notes d'autor són opcionals i segueixen
 [els criteris de recerca](research.md). `status`: draft, reviewed, needs-review. `reviewed` es
 reserva a una revisió humana explícita; la verificació de l'agent no l'atorga.
 `id` ha de ser únic i estable encara que canviï el títol. Dates ISO reals.
@@ -29,6 +29,11 @@ camins de les fitxes de font sense `.md`. En fitxes, pot quedar buit.
 Per a fonts afegeix, quan constin: `title`, `authors`, `year`, `doi`, `url`,
 `citekey`, `source_sha256`, `read_scope`, `extraction_notes`. Valors desconeguts:
 `null` o llista buida; mai deduccions presentades com a metadades verificades.
+Per classificar documents, afegeix `document_type`, `editorial_format`,
+`publication_version`, `journal_title`, `venue_title` i `classification_evidence`
+segons [revistes i tipus de document](journals.md). `type` continua descrivint
+la nota de wiki; `document_type` descriu el document científic.
+
 La citekey és opcional per facilitar una futura connexió bibliogràfica.
 
 ## Cos de la fitxa

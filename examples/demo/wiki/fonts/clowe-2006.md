@@ -3,7 +3,7 @@ id: "demo-fonts-clowe-2006"
 type: "source"
 status: "draft"
 created: "2026-09-30"
-updated: "2026-09-30"
+updated: "2026-10-01"
 tags: ["demostracio"]
 sources: ["raw/clowe-2006.md"]
 source_notes: []
@@ -16,6 +16,12 @@ citekey: "Clowe2006"
 source_sha256: null
 read_scope: "Metadades i abstract; resum documental propi complet; paper pendent"
 extraction_notes: "No lectura de pàgines, figures ni taules del paper"
+document_type: "research_article"
+editorial_format: null
+publication_version: null
+journal_title: "Astrophysical Journal"
+venue_title: null
+classification_evidence: ["https://arxiv.org/abs/astro-ph/0608407v1 — abstract i Journal reference"]
 ---
 
 # Clowe et al.: evidència gravitacional
@@ -35,3 +41,14 @@ article, abstract, frases 1–4. Es relaciona amb [[wiki/metodes/lent-feble|lent
 **Interpretació de l'agent:** és útil per formular una pregunta d'evidència
 macroscòpica, diferenciada d'una cerca de partícules. Vegeu
 [[wiki/sintesis/comparacio|comparació]] i [[wiki/pendents|pendents]].
+
+## Classificació i navegació
+
+Article de recerca classificat a partir de l'abstract. La demostració consulta
+metadades i abstract a arXiv; no s'ha identificat una còpia íntegra llegida
+com a manuscrit acceptat o versió editorial final. `publication_version`
+queda pendent. La versió arXiv és la indicada a la referència.
+
+El format editorial queda pendent de comprovació específica.
+
+Consulta [[wiki/revistes|revistes del corpus]] i [[wiki/tipus-documents|tipus de document]].

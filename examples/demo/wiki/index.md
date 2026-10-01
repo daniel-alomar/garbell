@@ -18,3 +18,6 @@ un buit sense inventar-ne la resposta. [[wiki/pendents|Pendents]] i
 
 [[wiki/guia|Què representa cada peça i com explorar-la]] ofereix una guia
 de lectura i una proposta de colors per al graf.
+
+Explora també les [[wiki/revistes|revistes del corpus]] i els
+[[wiki/tipus-documents|tipus de document]].

@@ -13,3 +13,7 @@ identificades per `sources` i `source_notes`.
 Comprovats destins locals i correspondència de localitzadors. La comparació
 i les preguntes són interpretacions de l'agent. Sense revisió humana explícita;
 les notes conserven `status: draft`. No s'ha actualitzat cap corpus personal.
+
+2026-10-01. Afegits catàlegs de revistes i tipus documentals. Classificació
+basada en metadades i abstracts arXiv v1 de Clowe i v4 de LZ; el format
+Letter de LZ consta a l’abstract. Es manté pendent la lectura íntegra.

@@ -54,7 +54,9 @@ una operació automatitzada específica d'aquest projecte.
 4. **Llegir i delimitar.** Llegir la font i conservar pàgines, seccions o altres
    localitzadors. Si falten pàgines, OCR o un lector, deixar constància de
    l'abast i dels pendents. Un resum parcial no completa la lectura original.
-5. **Crear la fitxa.** Registrar procedència, abast, contingut i límits. Buscar
+5. **Crear la fitxa.** Registrar procedència, abast, contingut i límits.
+   Identificar revista, tipus, format editorial i versió quan constin,
+   i mantenir els catàlegs del corpus enllaçats des de l'índex. Buscar
    identitats existents abans de duplicar. Enllaçar amb els originals.
 6. **Integrar i connectar.** Ampliar notes existents o crear conceptes, mètodes, síntesis d’evidència i preguntes de recerca.
    Explicar les relacions amb evidència; revisar també les notes que depenen

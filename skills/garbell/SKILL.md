@@ -77,6 +77,9 @@ actualitza els enllaços; no fusionis versions diferents només pel títol.
 4. Crea una fitxa per document bibliogràfic a `wiki/fonts/`. Cerca abans per
    DOI, títol i autoria; una còpia idèntica pot compartir fitxa. Conserva les
    versions i indica les diferències quan canvien els resultats.
+   Registra revista, tipus de document, format editorial i versió segons
+   [la classificació del corpus](references/journals.md). Actualitza els
+   catàlegs de revistes i tipus presents i enllaça’ls des de l’índex.
 5. Integra només contingut rellevant a les pàgines temàtiques existents.
    Cada pàgina declara les fonts directes a `sources` i les fitxes a
    `source_notes`. Si una font canvia o desapareix, cerca aquestes dependències

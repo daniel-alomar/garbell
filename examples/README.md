@@ -50,3 +50,6 @@ aquí s'inclouen resums propis breus amb atribució, no còpies dels articles.
 La carpeta oculta `demo/.obsidian/` inclou únicament el perfil de graf de
 la demostració. Conserva-la quan copiïs l'exemple si vols veure els colors
 preparats. Aquesta ajuda visual és opcional i no forma part de la skill.
+
+La demostració inclou també `wiki/revistes.md` i `wiki/tipus-documents.md`,
+amb els treballs agrupats i la classificació explicada a les fitxes.
