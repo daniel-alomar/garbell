@@ -67,3 +67,5 @@ L'ampliació amb [[wiki/fonts/planck-2020|Planck]] ofereix una
 [[wiki/sintesis/tres-vies|matriu de comparació]] i un
 [[wiki/preguntes/pla-lectura|pla de lectura]]: permet recuperar fonts i ordenar
 les comprovacions necessàries abans d'escriure conclusions.
+
+[English reading guide](../../../docs/en/demo-guide.md) (documentació del projecte, fora de la volta).

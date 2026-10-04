@@ -1,5 +1,7 @@
 # Prova Garbell com a suport a una recerca
 
+[Català](PASSEIG.md) · [English](WALKTHROUGH.en.md)
+
 Aquest exemple és un resultat preparat per explorar el flux, no una prova
 que qualsevol agent faci una revisió científica correcta. Parteix d'abstracts
 reals i resums propis; utilitza una còpia temporal per provar incorporacions.

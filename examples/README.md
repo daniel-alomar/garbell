@@ -1,5 +1,7 @@
 # Garbell: preguntes de recerca sobre matèria fosca
 
+[Català](README.md) · [English](README.en.md)
+
 Demostració basada en tres publicacions reals. Els fitxers de `demo/raw/`
 són **resums propis dels abstracts**, amb metadades i enllaços verificats
 entre el 2026-09-30 i el 2026-10-01; no són els articles íntegres ni cites literals. El contingut

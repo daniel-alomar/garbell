@@ -1,5 +1,7 @@
 # Com funciona Garbell
 
+[Català](funcionament.md) · [English](../en/workflow.md)
+
 Garbell és un projecte centrat en **una skill**. L'agent d'IA que ja utilitzes
 llegeix les instruccions i treballa sobre els fitxers de la volta. El projecte
 hi afegeix referències, eines auxiliars, documentació i exemples. Per a l'ús

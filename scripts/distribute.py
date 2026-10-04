@@ -7,7 +7,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parents[1]
 NAME = next((ROOT/'skills').iterdir()).name
 DEMO_GRAPH = 'examples/demo/.obsidian/graph.json'
-ALLOWED = {'README.md','AGENTS.md','.gitignore','skills','context','agents','scripts','tests','examples','docs'}
+ALLOWED = {'README.md','README.ca.md','AGENTS.md','.gitignore','skills','context','agents','scripts','tests','examples','docs'}
 
 def manifest(root=ROOT, examples=True):
     data = {}

@@ -53,7 +53,7 @@ class ProjectTests(unittest.TestCase):
         self.assertFalse(any(p.startswith(('examples/','memory/','vault/','dist/')) for p in data))
         with tempfile.TemporaryDirectory() as d:
             r=Path(d)
-            for p in ('README.md','memory/chat.md','vault/raw/font.md','.env'):
+            for p in ('README.md','README.ca.md','memory/chat.md','vault/raw/font.md','.env'):
                 f=r/p; f.parent.mkdir(parents=True,exist_ok=True); f.write_text('fixture')
-            self.assertEqual(set(DIST.manifest(r)),{'README.md'})
+            self.assertEqual(set(DIST.manifest(r)),{'README.md','README.ca.md'})
 if __name__=='__main__':unittest.main()
